@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Join a Union</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<style>
+		body{
+			font-family: Segoe UI, Noto Sans, Open Sans, Roboto, Arial;
+			overflow: hidden;
+			background: url("img/bg.avif");
+		}
+
+		.box1{
+			text-align: center;
+			border: solid black 1px;
+			max-width: 400px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-right: -50%;
+			transform: translate(-50%, -50%);
+			max-height: 100%;
+			overflow: auto;
+			background: white;
+		}
+		
+		.box1 ul{
+			text-align: left;
+			display: table;
+			margin: 0 auto;
+		}
+		
+		.box2{
+			text-align: center;
+			border: solid black 1px;
+			max-width: 400px;
+			display: none;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-right: -50%;
+			transform: translate(-50%, -50%);
+			max-height: 100%;
+			overflow: auto;
+			background: white;
+		}
+		
+		@media screen and (max-width:400px) {
+		  .box1, .box2{
+			max-width: 90%;
+		  }
+		}
+		
+		.box3{
+			text-align: center;
+			border: solid black 1px;
+			max-width: 600px;
+			display: none;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-right: -50%;
+			transform: translate(-50%, -50%);
+			max-height: 90%;
+			overflow: auto;
+			background: white;
+		}
+
+		.box3 p{
+			max-width: 400px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		
+		@media screen and (max-width:600px) {
+		  .box3{
+			max-width: 90%;
+		  }
+		}
+
+		.biggertext{
+			font-size: 20px;
+		}
+
+		select{
+			max-width: 90%
+		}
+
+		.unionTable{
+			width: 100%;
+		}
+		
+		.unionTable img{
+			width: 64px;
+			height: 64px;
+			filter: drop-shadow(2.5px 2.5px 2.5px black);
+		}
+		
+		.unionTable .unionAcronym{
+			font-weight: bold;
+		}
+		
+		.joinUnionBtn{
+			background: white;
+			border: solid 2px red;
+			font-size: 16px;
+			width: 50px;
+			height: 50px;
+			transition: all 0.3s;
+			border-radius: 1.5em;
+		}
+
+		.joinUnionBtn:hover{
+			cursor: pointer;
+			background: red;
+		}
+		
+		.redSquareBtn{
+			  background: white;
+			  border: solid 2px red;
+			  font-size: 16px;
+			  width: 150px;
+			  height: 50px;
+			  transition: all 0.3s;
+			  border-radius: 1.5em;
+		}
+
+		.redSquareBtn:hover{
+			cursor: pointer;
+			background: red;
+		}
+		
+		.backButton{
+			background: white;
+			border: solid 2px green;
+			font-size: 16px;
+			width: 50px;
+			height: 50px;
+			transition: all 0.3s;
+			border-radius: 1.5em;
+		}
+
+		.backButton:hover{
+			cursor: pointer;
+			background: green;
+		}
+		
+		/*.joinUnionBtn{
+			background: red;
+			font-size: 16px;
+			width: 50px;
+			height: 50px;
+		}
+
+		.joinUnionBtn:hover{
+			cursor: pointer;
+			border: solid 5px black;
+		}*/
+		
+		.animate-opacity{animation:opac 1s}@keyframes opac{from{opacity:0} to{opacity:1}}
+		.animate-opacityR{animation:opacR 1s}@keyframes opacR{from{opacity:1} to{opacity:0}}
+	</style>
+	
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+	<div id="box1" class="box1">
+		<h1>Join a union</h1>
+		<div id="box1_intro">
+		<img src="img/logo.png" width="128" height="128">
+		<p><b>A union</b> is the right answer to improve your life at work. Potential benefits include:
+		<ul>
+			<li>Higher wages</li>
+			<li>Better benefits</li>
+			<li>Better working conditions</li>
+			<li>Job safety</li>
+		</ul></p>
+		<p>This website will allow you to quickly and easily locate and join the relevant union. To start, please select your location.</p>
+		</div>
+		<p class="biggertext">➡️Select your location: <select id="countrySelect">
+				<option></option>
+			</select>
+		</p>
+	</div>
+	
+	<div id="box2" class="box2">
+		<button class="backButton" id="box2_backButton">🔙</button>
+		<p id="box2_intro">The following unions are available.<br>If you don't know which to choose, simply choose any.<br>Joining a union typically requires you to follow the union's rules and pay a small regular fee.</p>
+		<table id="unionTable" class="unionTable">
+		
+		</table>
+	</div>
+	
+	<div id="box3" class="box3">
+		<button class="backButton" id="box3_backButton">🔙</button>
+		<p>Is any other worker at your workplace a union member?</p>
+		
+		<form id="form1">
+	  		<input type="radio" id="radio1y" name="radio1" value="Yes">
+	  		<label for="radio1y">Yes</label><br>
+	  		<input type="radio" id="radio1n" name="radio1" value="No">
+	  		<label for="radio1n">No</label><br>
+	  		<input type="radio" id="radio1nojob" name="radio1" value="NoJob">
+	  		<label for="radio1nojob">I don't have a job</label><br>
+		</form>
+		
+		<p id="radio1y_info" style="display:none">Ask the other worker how to join the union. Ask them to provide you with the union's name and local number.<br>Then search for that on the web (for example, "SEIU Local 3"), find how to contact them and apply.</p>
+		
+		<p id="radio1n_info" style="display:none">➡️ Select your occupation:
+			<select id="occupationSelect">
+				<option></option>
+			</select></p>
+		
+		<div id="radio1n_info2" style="display:none">
+			<p id="radio1n_info2_1" style="display:none">The following unions are available.<br>If you don't know which to choose, simply choose any.<br>Joining a union typically requires you to follow the union's rules and pay a small regular fee.</p>
+			<p id="radio1n_info2_2" style="display:none">The following unions must be joined as a group. If at least a few of your coworkers support unionizing, contact the union. Otherwise, build support for unionization among your coworkers first.</p>
+			<p id="radio1n_info2_3" style="display:none">You have two options to join the union:<br>
+			1) Build support among your coworkers and get them all in the union at once.<br>
+			Or, 2) Just get in contact with the union and join alone.</p>
+			<p id="radio1n_info2_4" style="display:none">The following unions organize all kinds of workers, so they are suitable if you don't fit in other categories. These unions must be joined as a group. If at least a few of your coworkers support unionizing, contact the union. Otherwise, build support for unionization among your coworkers first.</p>
+		</div>
+		<div id="radio1nojob_info" style="display:none"><p>The following unions may offer apprenticeships, which allow you to get a union job and get trained--earning money while you learn. Typically, these give good wages and require little or no initial experience.</p>
+		<button class="redSquareBtn" id="btnHowJoinApprenticeship">How to apply?</button>
+		<button class="redSquareBtn" id="btnShowApprenticeshipList">Show union list</button>
+			<ol id="text_HowApplyApprenticeship" style="display:none">
+				<li>Go to the website of one of the unions in the list.
+				<li>Use it to find a local (a union's subdivisions are called "locals") near your location.
+				<li>Contact the local and ask about the apprenticeship program.</li>	
+			</ol></p></div>
+		
+		<table id="box2_unionTable" class="unionTable">
+		
+		</table>
+	</div>
+</body>
+</html>
