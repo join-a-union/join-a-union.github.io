@@ -1,0 +1,175 @@
+body{
+	font-family: Segoe UI, Noto Sans, Open Sans, Roboto, Arial;
+	overflow: hidden;
+	background: url("img/bg.avif");
+}
+
+.box1{
+	text-align: center;
+	border: solid black 1px;
+	max-width: 400px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	max-height: 100%;
+	overflow: auto;
+	background: white;
+}
+
+.box1 ul{
+	text-align: left;
+	display: table;
+	margin: 0 auto;
+}
+
+.box2{
+	text-align: center;
+	border: solid black 1px;
+	max-width: 400px;
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	max-height: 100%;
+	overflow: auto;
+	background: white;
+}
+
+@media screen and (max-width:400px) {
+  .box1, .box2{
+	max-width: 90%;
+  }
+}
+
+.box3{
+	text-align: center;
+	border: solid black 1px;
+	max-width: 600px;
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	max-height: 90%;
+	overflow: auto;
+	background: white;
+}
+
+.box3 p{
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media screen and (max-width:600px) {
+  .box3{
+	max-width: 90%;
+  }
+}
+
+.biggertext{
+	font-size: 20px;
+}
+
+select{
+	max-width: 90%
+}
+
+.unionTable{
+	width: 100%;
+}
+
+.unionTable img{
+	width: 64px;
+	height: 64px;
+	filter: drop-shadow(2.5px 2.5px 2.5px black);
+}
+
+.unionTable .unionAcronym{
+	font-weight: bold;
+}
+
+.joinUnionBtn{
+	background: white;
+	border: solid 2px red;
+	font-size: 16px;
+	min-width: 50px;
+	height: 50px;
+	transition: all 0.3s;
+	border-radius: 1.5em;
+}
+
+.joinUnionBtn:hover{
+	cursor: pointer;
+	background: red;
+}
+
+.redSquareBtn{
+	  background: white;
+	  border: solid 2px red;
+	  font-size: 16px;
+	  width: 150px;
+	  height: 50px;
+	  transition: all 0.3s;
+	  border-radius: 1.5em;
+}
+
+.redSquareBtn:hover{
+	cursor: pointer;
+	background: red;
+}
+
+.backButton{
+	background: white;
+	border: solid 2px green;
+	font-size: 16px;
+	min-width: 50px;
+	height: 50px;
+	transition: all 0.3s;
+	border-radius: 1.5em;
+}
+
+.backButton:hover{
+	cursor: pointer;
+	background: green;
+}
+
+/*.joinUnionBtn{
+	background: red;
+	font-size: 16px;
+	width: 50px;
+	height: 50px;
+}
+
+.joinUnionBtn:hover{
+	cursor: pointer;
+	border: solid 5px black;
+}*/
+
+.animate-opacity{animation:opac 1s}@keyframes opac{from{opacity:0} to{opacity:1}}
+.animate-opacityR{animation:opacR 1s}@keyframes opacR{from{opacity:1} to{opacity:0}}
+
+.loading-button {
+  position: relative;
+}
+
+.loading-button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  min-width: 20px;
+  min-height: 20px;
+  border-radius: 50%;
+  border: 3px solid #ccc;
+  border-top-color: #333;
+  animation: spin 2.5s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
