@@ -1152,6 +1152,7 @@ function genUnionTable(dataset, whichTable, matchOccupation, matchApprenticeship
                 a.innerHTML = "Read more";
                 a.href = union["Link"];
                 a.target = "_blank";
+                a.addEventListener("click", onClickJoinLink);
                 p.appendChild(a);
                 td.appendChild(p);
                 tr.appendChild(td);
@@ -1162,7 +1163,7 @@ function genUnionTable(dataset, whichTable, matchOccupation, matchApprenticeship
                     if(matchApprenticeships && union["Apprenticeship link"] != ""){
                         a.href = union["Apprenticeship link"];
                     }
-                    // a.target = "_blank";
+                    a.target = "_blank";
                     /*var link1 = document.createElement("link");
                     link1.rel = "prefetch";
                     link1.href = a.href;
