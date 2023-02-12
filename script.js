@@ -120,6 +120,18 @@ union_data = [
     "Image": ""
   },
   {
+    "Country": "Croatia",
+    "Union": "SSSH",
+    "Full name": "Savez samostalnih sindikata Hrvatske",
+    "Link": "https://www.sssh.hr/",
+    "Join link": "https://www.sssh.hr/uclani-se",
+    "SourceImage": "",
+    "Site lang": "",
+    "Membership conditions link": "",
+    "": "",
+    "Image": "1_43.png"
+  },
+  {
     "Country": "Denmark",
     "Union": "3F",
     "Full name": "Fagligt Fælles Forbund",
@@ -172,7 +184,7 @@ union_data = [
     "Union": "SAK",
     "Full name": "Suomen Ammattiliittojen Keskusjärjestö",
     "Link": "https://www.sak.fi/",
-    "Join link": "https://www.liitot.fi/",
+    "Join link": "https://www.liitot.fi/#search",
     "SourceImage": "https://www.liitot.fi/site/templates/resources/images/logo.svg",
     "Site lang": "",
     "Membership conditions link": "",
@@ -376,7 +388,7 @@ union_data = [
     "Union": "BNS",
     "Full name": "Blocul National Sindical",
     "Link": "https://www.bns.ro/",
-    "Join link": "https://www.bns.ro/adera-la-bns-persoana-fizica",
+    "Join link": "https://www.bns.ro/adera-la-bns-actiuni",
     "SourceImage": "https://www.bns.ro/images/bns-sigla2.png",
     "Site lang": "",
     "Membership conditions link": "",
@@ -641,6 +653,21 @@ union_data2 = [
     "Image": "2_10.webp"
   },
   {
+    "Country": "USA",
+    "Union": "NNU",
+    "Full name": "National Nurses United",
+    "Link": "http://www.nationalnursesunited.org/",
+    "Join link": "https://go.nationalnursesunited.org/signup/organize/",
+    "SourceImage": "https://cdn.inksoft.com/images/clipart/rendered/unionbug_unionbug.com/26260_NNU_BASEBALL_T.png",
+    "Site lang": "",
+    "Membership conditions link": "",
+    "Occupation": "Healthcare and related workers",
+    "Direct join": "No",
+    "Apprenticeships": "",
+    "Apprenticeship link": "",
+    "Image": "2_33.webp"
+  },
+  {
     "Country": "USA;Canada",
     "Union": "UNITE HERE",
     "Full name": "UNITE HERE",
@@ -654,6 +681,21 @@ union_data2 = [
     "Apprenticeships": "",
     "Apprenticeship link": "",
     "Image": "2_11.webp"
+  },
+  {
+    "Country": "USA;Canada",
+    "Union": "IW",
+    "Full name": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+    "Link": "https://www.ironworkers.org/",
+    "Join link": "https://www.ironworkers.org/get-organized/organizing-assistance-request",
+    "SourceImage": "https://upload.wikimedia.org/wikipedia/en/e/ed/Ironworkers_logo.png",
+    "Site lang": "",
+    "Membership conditions link": "",
+    "Occupation": "Ironworker",
+    "Direct join": "No",
+    "Apprenticeships": "Yes",
+    "Apprenticeship link": "https://www.ironworkers.org/become-an-ironworker/do-you-have-what-it-takes-",
+    "Image": "2_32.webp"
   },
   {
     "Country": "USA;Canada",
@@ -806,6 +848,21 @@ union_data2 = [
     "Image": "2_21.webp"
   },
   {
+    "Country": "USA;Canada",
+    "Union": "UA",
+    "Full name": "United Association of Journeymen and Apprentices of the Plumbing and Pipe Fitting Industry",
+    "Link": "https://ua.org",
+    "Join link": "https://ua.org/join-the-ua/",
+    "SourceImage": "https://upload.wikimedia.org/wikipedia/en/7/7c/United_association_logo.png",
+    "Site lang": "",
+    "Membership conditions link": "",
+    "Occupation": "Plumbers and pipefitters",
+    "Direct join": "No",
+    "Apprenticeships": "Yes",
+    "Apprenticeship link": "",
+    "Image": "2_31.webp"
+  },
+  {
     "Country": "USA",
     "Union": "APWU",
     "Full name": "American Postal Workers Union",
@@ -926,66 +983,6 @@ union_data2 = [
     "Image": "2_29.webp"
   },
   {
-    "Country": "USA;Canada",
-    "Union": "RWDSU",
-    "Full name": "Retail, Wholesale and Department Store Union",
-    "Link": "",
-    "Join link": "https://www.rwdsu.info/contact_an_organizer",
-    "SourceImage": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f0/RWDSU_logo.svg/1200px-RWDSU_logo.svg.png",
-    "Site lang": "",
-    "Membership conditions link": "",
-    "Occupation": "Warehouse",
-    "Direct join": "No",
-    "Apprenticeships": "",
-    "Apprenticeship link": "",
-    "Image": "2_30.webp"
-  },
-  {
-    "Country": "USA;Canada",
-    "Union": "UA",
-    "Full name": "United Association of Journeymen and Apprentices of the Plumbing and Pipe Fitting Industry",
-    "Link": "https://ua.org",
-    "Join link": "https://ua.org/join-the-ua/",
-    "SourceImage": "https://upload.wikimedia.org/wikipedia/en/7/7c/United_association_logo.png",
-    "Site lang": "",
-    "Membership conditions link": "",
-    "Occupation": "Plumbers and pipefitters",
-    "Direct join": "No",
-    "Apprenticeships": "Yes",
-    "Apprenticeship link": "",
-    "Image": "2_31.webp"
-  },
-  {
-    "Country": "USA;Canada",
-    "Union": "IW",
-    "Full name": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
-    "Link": "https://www.ironworkers.org/",
-    "Join link": "https://www.ironworkers.org/get-organized/organizing-assistance-request",
-    "SourceImage": "https://upload.wikimedia.org/wikipedia/en/e/ed/Ironworkers_logo.png",
-    "Site lang": "",
-    "Membership conditions link": "",
-    "Occupation": "Ironworker",
-    "Direct join": "No",
-    "Apprenticeships": "Yes",
-    "Apprenticeship link": "https://www.ironworkers.org/become-an-ironworker/do-you-have-what-it-takes-",
-    "Image": "2_32.webp"
-  },
-  {
-    "Country": "USA",
-    "Union": "NNU",
-    "Full name": "National Nurses United",
-    "Link": "http://www.nationalnursesunited.org/",
-    "Join link": "https://go.nationalnursesunited.org/signup/organize/",
-    "SourceImage": "https://cdn.inksoft.com/images/clipart/rendered/unionbug_unionbug.com/26260_NNU_BASEBALL_T.png",
-    "Site lang": "",
-    "Membership conditions link": "",
-    "Occupation": "Healthcare and related workers",
-    "Direct join": "No",
-    "Apprenticeships": "",
-    "Apprenticeship link": "",
-    "Image": "2_33.webp"
-  },
-  {
     "Country": "USA",
     "Union": "TWU",
     "Full name": "Transport Workers Union of America",
@@ -999,6 +996,21 @@ union_data2 = [
     "Apprenticeships": "",
     "Apprenticeship link": "",
     "Image": "2_34.webp"
+  },
+  {
+    "Country": "USA;Canada",
+    "Union": "RWDSU",
+    "Full name": "Retail, Wholesale and Department Store Union",
+    "Link": "",
+    "Join link": "https://www.rwdsu.info/contact_an_organizer",
+    "SourceImage": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f0/RWDSU_logo.svg/1200px-RWDSU_logo.svg.png",
+    "Site lang": "",
+    "Membership conditions link": "",
+    "Occupation": "Warehouse",
+    "Direct join": "No",
+    "Apprenticeships": "",
+    "Apprenticeship link": "",
+    "Image": "2_30.webp"
   }
 ];
 
@@ -1022,12 +1034,46 @@ function loadDataForSelect(selectElement, dataset, type, list){
     });
 }
 
+function resetPage(){
+    if(location.hash == "" || location.hash == "#"){
+        countrySelect.value = "";
+        geoAutoSelect();
+    }
+    
+    occupationSelect.value = "";
+    $("form1").reset();
+}
+
+function geoAutoSelect(){
+    var country;
+    /*
+    // Geo IP
+    fetch('https://ipapi.co/json/')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    var country = data.country_name;
+  });*/
+  
+    // Browser locale
+    var locale = new Intl.DateTimeFormat().resolvedOptions().locale;
+    if(locale.includes("-")){
+        var browserCountryCode = locale.split('-')[1];
+        var regionNames = new Intl.DisplayNames(['en'], {type: 'region'});
+        country = regionNames.of(browserCountryCode);
+        if(country == "United States") country = "USA";
+        countrySelect.value = country;
+        changedCountry();
+        // if(!checkHaveDataForCountry()) $("countryDataNotFoundBox").style.display = "revert"; // Commented out bc maybe country detection is wrong
+    }
+}
+
 function onload(){
 	countrySelect = $("countrySelect");
     // loadDataForSelect(countrySelect, union_data, "Country", [...data2Countries]);
     loadDataForSelect(countrySelect, union_data, "Country", []);
 	occupationSelect = $("occupationSelect");
-	
 	countrySelect.addEventListener("change", changedCountry);
 	occupationSelect.addEventListener("change", changedOccupation);
 	$("form1").addEventListener("change", form1_change);
@@ -1035,26 +1081,47 @@ function onload(){
 	$("box3_backButton").addEventListener("click", box3_backButton_Click);
 	$("btnHowJoinApprenticeship").addEventListener("click", btnHowJoinApprenticeship_Click);
 	$("btnShowApprenticeshipList").addEventListener("click", btnShowApprenticeshipList_Click);
-    $("form1").reset();
+    addEventListener('hashchange', onHashChange);
+    addEventListener('pageshow', resetPage);
+    if(location.hash != ""){
+        countrySelect.value = location.hash.split("#")[1];
+        changedCountry();
+    }
 }
 
 function changedCountry(){
 	// $("box1_intro").style.display = "none";
-    $("box1").style.display = "none";
+    // $("box2_countryLabel").innerHTML = countrySelect.value;
+    //$("box2_countryLabel2").innerHTML = countrySelect.value;
     if(data2Countries.includes(countrySelect.value)){
+        $("box1").style.display = "none";
         $("box2").style.display = "none";
         $("box3").style.display = "revert";
         $("box3").classList.add("animate-opacity");
         $("box3").scrollIntoView({behavior: "smooth"})
+        $("box3_countryLabel").appendChild(countrySelect);
+        resetBox3();
     }else if(countrySelect.value != ""){
-       //  $("box2").classList.remove("animate-opacity");
-        $("box3").style.display = "none";
-        $("box2").style.display = "revert";
-        // $("box1_intro").classList.add("animate-opacityR");
-        genUnionTable(union_data, $("unionTable"), false);
-        $("box2").classList.add("animate-opacity");
-        $("box2").scrollIntoView({behavior: "smooth"});
+        if(union_data.some(obj => obj.Country === countrySelect.value)){
+            $("box1").style.display = "none";
+           //  $("box2").classList.remove("animate-opacity");
+            $("box3").style.display = "none";
+            $("box2").style.display = "revert";
+            // $("box1_intro").classList.add("animate-opacityR");
+            genUnionTable(union_data, $("unionTable"), false);
+            $("box2").classList.add("animate-opacity");
+            $("box2").scrollIntoView({behavior: "smooth"});
+            $("box2_countryLabel").appendChild(countrySelect);
+        }else{
+            
+        }
 	}
+    
+    // location.hash = countrySelect.value;
+}
+
+function checkHaveDataForCountry(){
+    return data2Countries.includes(countrySelect.value) || union_data.some(obj => obj.Country === countrySelect.value);
 }
 
 function genUnionTable(dataset, whichTable, matchOccupation, matchApprenticeships = false){
@@ -1095,11 +1162,18 @@ function genUnionTable(dataset, whichTable, matchOccupation, matchApprenticeship
                     if(matchApprenticeships && union["Apprenticeship link"] != ""){
                         a.href = union["Apprenticeship link"];
                     }
-                    a.target = "_blank";
+                    // a.target = "_blank";
+                    /*var link1 = document.createElement("link");
+                    link1.rel = "prefetch";
+                    link1.href = a.href;
+                    link1.as = "document";
+                    document.head.appendChild(link1);*/
                     var btn = document.createElement("button");
                     btn.className = "joinUnionBtn";
                     btn.innerText = "Join!";
+                    a.addEventListener("click", onClickJoinLink);
                     a.appendChild(btn);
+                    // btn.addEventListener("click", onClickJoinLink);
                     td.appendChild(a);
                     tr.appendChild(td);
                 }
@@ -1117,6 +1191,74 @@ function genUnionTable(dataset, whichTable, matchOccupation, matchApprenticeship
         });
         
         return ret;
+}
+
+function onClickJoinLink(e){
+    // this.classList.add("loading-button");
+    e.preventDefault();
+    var newTab = window.open();
+    var html = `
+      <html>
+        <head>
+          <title>Join a Union</title>
+          <script>
+              function onload(){
+                var link = "` + this.href + `";
+                location.href = link;
+                /*var iframe = document.createElement("iframe");
+                iframe.src = link;
+                document.body.appendChild(iframe);
+                iframeError = setTimeout(error, 5000);
+
+                iframe.onload = function() {
+                  location.href = link;
+                };
+
+                iframe.onerror = function() {
+                  location.href = link;
+                };*/
+              }
+            window.addEventListener("load", onload);
+          </script>
+        </head>
+        <body>
+          <div class="loading-screen">
+  <div class="loading-spinner"></div>
+</div>
+
+<style>
+  .loading-screen {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    z-index: 9999;
+  }
+
+  .loading-spinner {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 3s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+</style>
+        </body>
+      </html>
+    `;
+    newTab.document.write(html);
+    newTab.document.close();
 }
 
 function changedOccupation(){
@@ -1188,19 +1330,27 @@ function box2_backButton_Click(){
     $("box2").style.display = "none";
     $("box1").style.display = "revert";
     countrySelect.value = "";
+    location.hash = "";
+    $("box1_countrySelectHolder").appendChild(countrySelect);
 }
 
 function box3_backButton_Click(){
-    occupationSelect.value = "";
-    $("form1").reset();
+    countrySelect.value = "";
+    resetBox3();
+    location.hash = "";
     $("box3").style.display = "none";
     $("box1").style.display = "revert";
+    $("box1_countrySelectHolder").appendChild(countrySelect);
+}
+
+function resetBox3(){
+    occupationSelect.value = "";
+    $("form1").reset();
     $("radio1y_info").style.display = "none";
     $("radio1n_info").style.display = "none";
     $("radio1n_info2").style.display = "none";
     $("radio1nojob_info").style.display = "none";
     $("box2_unionTable").style.display = "none";
-    countrySelect.value = "";
 }
 
 function btnHowJoinApprenticeship_Click(){
@@ -1221,4 +1371,11 @@ function btnShowApprenticeshipList_Click(){
     }
 }
 
-addEventListener("load", onload);
+function onHashChange(){
+    if(location.hash == ""){
+        if($("box2").style.display != "none") box2_backButton_Click();
+        if($("box3").style.display != "none") box3_backButton_Click();
+    }
+}
+
+addEventListener("DOMContentLoaded", onload);

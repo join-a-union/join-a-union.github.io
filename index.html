@@ -3,169 +3,19 @@
 <head>
 	<title>Join a Union</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<style>
-		body{
-			font-family: Segoe UI, Noto Sans, Open Sans, Roboto, Arial;
-			overflow: hidden;
-			background: url("img/bg.avif");
-		}
-
-		.box1{
-			text-align: center;
-			border: solid black 1px;
-			max-width: 400px;
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			margin-right: -50%;
-			transform: translate(-50%, -50%);
-			max-height: 100%;
-			overflow: auto;
-			background: white;
-		}
-		
-		.box1 ul{
-			text-align: left;
-			display: table;
-			margin: 0 auto;
-		}
-		
-		.box2{
-			text-align: center;
-			border: solid black 1px;
-			max-width: 400px;
-			display: none;
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			margin-right: -50%;
-			transform: translate(-50%, -50%);
-			max-height: 100%;
-			overflow: auto;
-			background: white;
-		}
-		
-		@media screen and (max-width:400px) {
-		  .box1, .box2{
-			max-width: 90%;
-		  }
-		}
-		
-		.box3{
-			text-align: center;
-			border: solid black 1px;
-			max-width: 600px;
-			display: none;
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			margin-right: -50%;
-			transform: translate(-50%, -50%);
-			max-height: 90%;
-			overflow: auto;
-			background: white;
-		}
-
-		.box3 p{
-			max-width: 400px;
-			margin-left: auto;
-			margin-right: auto;
-		}
-		
-		@media screen and (max-width:600px) {
-		  .box3{
-			max-width: 90%;
-		  }
-		}
-
-		.biggertext{
-			font-size: 20px;
-		}
-
-		select{
-			max-width: 90%
-		}
-
-		.unionTable{
-			width: 100%;
-		}
-		
-		.unionTable img{
-			width: 64px;
-			height: 64px;
-			filter: drop-shadow(2.5px 2.5px 2.5px black);
-		}
-		
-		.unionTable .unionAcronym{
-			font-weight: bold;
-		}
-		
-		.joinUnionBtn{
-			background: white;
-			border: solid 2px red;
-			font-size: 16px;
-			width: 50px;
-			height: 50px;
-			transition: all 0.3s;
-			border-radius: 1.5em;
-		}
-
-		.joinUnionBtn:hover{
-			cursor: pointer;
-			background: red;
-		}
-		
-		.redSquareBtn{
-			  background: white;
-			  border: solid 2px red;
-			  font-size: 16px;
-			  width: 150px;
-			  height: 50px;
-			  transition: all 0.3s;
-			  border-radius: 1.5em;
-		}
-
-		.redSquareBtn:hover{
-			cursor: pointer;
-			background: red;
-		}
-		
-		.backButton{
-			background: white;
-			border: solid 2px green;
-			font-size: 16px;
-			width: 50px;
-			height: 50px;
-			transition: all 0.3s;
-			border-radius: 1.5em;
-		}
-
-		.backButton:hover{
-			cursor: pointer;
-			background: green;
-		}
-		
-		/*.joinUnionBtn{
-			background: red;
-			font-size: 16px;
-			width: 50px;
-			height: 50px;
-		}
-
-		.joinUnionBtn:hover{
-			cursor: pointer;
-			border: solid 5px black;
-		}*/
-		
-		.animate-opacity{animation:opac 1s}@keyframes opac{from{opacity:0} to{opacity:1}}
-		.animate-opacityR{animation:opacR 1s}@keyframes opacR{from{opacity:1} to{opacity:0}}
-	</style>
-	
+	<meta name="description" content="Locate and join an organization that fights for better working conditions.">
+	<link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
 	<script type="text/javascript" src="script.js"></script>
+	<!--<script>
+	function googleTranslateElementInit() {
+	  new google.translate.TranslateElement({
+		pageLanguage: 'en'
+	  });
+	}
+	</script><script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>-->
 </head>
 <body>
-	<div id="box1" class="box1">
+	<div id="box1" class="box1 animate-opacity">
 		<h1>Join a union</h1>
 		<div id="box1_intro">
 		<img src="img/logo.png" width="128" height="128">
@@ -178,23 +28,26 @@
 		</ul></p>
 		<p>This website will allow you to quickly and easily locate and join the relevant union. To start, please select your location.</p>
 		</div>
-		<p class="biggertext">➡️Select your location: <select id="countrySelect">
+		<p class="biggertext" id="box1_countrySelectHolder">➡️Select your location: <select id="countrySelect">
 				<option></option>
 			</select>
 		</p>
+		<div id="countryDataNotFoundBox" style="display: none">⚠️ We're sorry. We don't have data on how to join a union for your country. Please try to Google "how to join a union".</div>
 	</div>
 	
 	<div id="box2" class="box2">
-		<button class="backButton" id="box2_backButton">🔙</button>
-		<p id="box2_intro">The following unions are available.<br>If you don't know which to choose, simply choose any.<br>Joining a union typically requires you to follow the union's rules and pay a small regular fee.</p>
+		<button class="backButton" id="box2_backButton">⬅️<br>Back</button>
+		<h1>Join a union</h1>
+		<p id="box2_intro">Ready for the first step to joining an organization of workers that fights for better wages and working conditions?<br><br>The following unions are available in<br><span id="box2_countryLabel">➡️</span> <!--<a href="#" onclick="box2_backButton_Click()">(change country)</a>-->.<br>If you don't know which to choose, simply choose any.<br>Joining a union typically requires you to follow the union's rules and pay a small regular fee.<!--<br><br><a>not in <span id="box2_countryLabel2">Country</span></a>?--></p>
 		<table id="unionTable" class="unionTable">
 		
 		</table>
 	</div>
 	
 	<div id="box3" class="box3">
-		<button class="backButton" id="box3_backButton">🔙</button>
-		<p>Is any other worker at your workplace a union member?</p>
+		<button class="backButton" id="box3_backButton">⬅️<br>Back</button>
+		<h1>Join a union</h1>
+		<p>Ready for the first step to joining an organization of workers that fights for better wages and working conditions? Let's locate the union for you.<br><span id="box3_countryLabel">➡️Location: </span><br><br>First, is any other worker at your workplace a union member?</p>
 		
 		<form id="form1">
 	  		<input type="radio" id="radio1y" name="radio1" value="Yes">
