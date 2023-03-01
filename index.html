@@ -14,8 +14,8 @@
 	}
 	</script><script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>-->
 </head>
-<body>
-	<div id="box1" class="box1 animate-opacity">
+<body class="no-transition">
+	<div id="box1" class="box box1" style="display: none">
 		<h1>Join a union</h1>
 		<div id="box1_intro">
 		<img src="img/logo.png" width="128" height="128">
@@ -35,56 +35,61 @@
 		<div id="countryDataNotFoundBox" style="display: none">⚠️ We're sorry. We don't have data on how to join a union for your country. Please try to Google "how to join a union".</div>
 	</div>
 	
-	<div id="box2" class="box2">
-		<button class="backButton" id="box2_backButton">⬅️<br>Back</button>
+	<div id="box2" class="box box2" style="display: none">
+		<button class="myButton1 backButton" id="box2_backButton"><span>⬅️<br>Back</span></button>
 		<h1>Join a union</h1>
-		<p id="box2_intro">Ready for the first step to joining an organization of workers that fights for better wages and working conditions?<br><br>The following unions are available in<br><span id="box2_countryLabel">➡️</span> <!--<a href="#" onclick="box2_backButton_Click()">(change country)</a>-->.<br>If you don't know which to choose, simply choose any.<br>Joining a union typically requires you to follow the union's rules and pay a small regular fee.<!--<br><br><a>not in <span id="box2_countryLabel2">Country</span></a>?--></p>
+		<p id="box2_intro">Ready for the first step to joining an organization of workers that fights for better wages and working conditions?<br><br>The following unions are available in<br><span id="box2_countryLabel">➡️</span> <!--<a href="#" onclick="box2_backButton_Click()">(change country)</a>-->.<br>If you don't know which to choose, simply choose any. Joining a union typically requires you to follow the union's rules and pay a small regular fee.<!--<br><br><a>not in <span id="box2_countryLabel2">Country</span></a>?--></p>
 		<table id="unionTable" class="unionTable">
 		
 		</table>
 	</div>
 	
-	<div id="box3" class="box3">
-		<button class="backButton" id="box3_backButton">⬅️<br>Back</button>
+	<div id="box3" class="box box3" style="display: none">
+		<button class="myButton1 backButton" id="box3_backButton"><span>⬅️<br>Back</span></button>
 		<h1>Join a union</h1>
-		<p>Ready for the first step to joining an organization of workers that fights for better wages and working conditions? Let's locate the union for you.<br><span id="box3_countryLabel">➡️Location: </span><br><br>First, is any other worker at your workplace a union member?</p>
-		
-		<form id="form1">
-	  		<input type="radio" id="radio1y" name="radio1" value="Yes">
-	  		<label for="radio1y">Yes</label><br>
-	  		<input type="radio" id="radio1n" name="radio1" value="No">
-	  		<label for="radio1n">No</label><br>
-	  		<input type="radio" id="radio1nojob" name="radio1" value="NoJob">
-	  		<label for="radio1nojob">I don't have a job</label><br>
-		</form>
-		
-		<p id="radio1y_info" style="display:none">Ask the other worker how to join the union. Ask them to provide you with the union's name and local number.<br>Then search for that on the web (for example, "SEIU Local 3"), find how to contact them and apply.</p>
-		
-		<p id="radio1n_info" style="display:none">➡️ Select your occupation:
-			<select id="occupationSelect">
-				<option></option>
-			</select></p>
-		
-		<div id="radio1n_info2" style="display:none">
-			<p id="radio1n_info2_1" style="display:none">The following unions are available.<br>If you don't know which to choose, simply choose any.<br>Joining a union typically requires you to follow the union's rules and pay a small regular fee.</p>
-			<p id="radio1n_info2_2" style="display:none">The following unions must be joined as a group. If at least a few of your coworkers support unionizing, contact the union. Otherwise, build support for unionization among your coworkers first.</p>
-			<p id="radio1n_info2_3" style="display:none">You have two options to join the union:<br>
-			1) Build support among your coworkers and get them all in the union at once.<br>
-			Or, 2) Just get in contact with the union and join alone.</p>
-			<p id="radio1n_info2_4" style="display:none">The following unions organize all kinds of workers, so they are suitable if you don't fit in other categories. These unions must be joined as a group. If at least a few of your coworkers support unionizing, contact the union. Otherwise, build support for unionization among your coworkers first.</p>
+		<div id="box3_1" class="boxChild boxChild_active">
+			<p>Ready for the first step to joining an organization of workers that fights for better wages and working conditions? Let's locate the union for you.<br><span id="box3_countryLabel">➡️Location: </span><br><br>➡️Next, is any other worker at your workplace a union member?</p>
+			
+			<div id="box3_formContainer">
+				<form id="form1">
+					<nav class="radioNav"><label for="radio1y"><input type="radio" id="radio1y" name="radio1" value="Yes">Yes</label><label for="radio1n"><input type="radio" id="radio1n" name="radio1" value="No">No</label><label for="radio1nojob"><input type="radio" id="radio1nojob" name="radio1" value="NoJob">No<br>job</label></nav>
+				</form>
+			</div>
+			
+			<p id="radio1y_info" style="display:none">Ask the other worker how to join the union. Ask them to provide you with the union's name and local number. Then search for that on the web (for example, "SEIU Local 3"), find how to contact them and apply.</p>
+			
+			<p id="radio1n_info" style="display:none">➡️ Select your occupation:
+				<select id="occupationSelect">
+					<option></option>
+				</select></p>
 		</div>
-		<div id="radio1nojob_info" style="display:none"><p>The following unions may offer apprenticeships, which allow you to get a union job and get trained--earning money while you learn. Typically, these give good wages and require little or no initial experience.</p>
-		<button class="redSquareBtn" id="btnHowJoinApprenticeship">How to apply?</button>
-		<button class="redSquareBtn" id="btnShowApprenticeshipList">Show union list</button>
-			<ol id="text_HowApplyApprenticeship" style="display:none">
-				<li>Go to the website of one of the unions in the list.
-				<li>Use it to find a local (a union's subdivisions are called "locals") near your location.
-				<li>Contact the local and ask about the apprenticeship program.</li>	
-			</ol></p></div>
 		
-		<table id="box2_unionTable" class="unionTable">
-		
-		</table>
+		<div id="box3_2" class="boxChild" style="display: none">
+			<p id="box3_2_front"><!--➡️ Location: --></p>
+			<div id="radio1n_info2" style="display:none">
+				<p id="radio1n_info2_1" style="display:none">The following unions are available.<br>If you don't know which to choose, simply choose any.<br>Joining a union typically requires you to follow the union's rules and pay a small regular fee.</p>
+				<p id="radio1n_info2_2" style="display:none">The following unions must be joined as a group. If at least a few of your coworkers support unionizing, click Join to contact the union. Otherwise, build support for unionization among your coworkers first and then return here (save the page).</p>
+				<p id="radio1n_info2_3" style="display:none">You have two options to join the union:<br>
+				1) Build support among your coworkers and get them all in the union at once.<br>
+				Or, 2) Just get in contact with the union and join alone.</p>
+				<p id="radio1n_info2_4" style="display:none">The following unions organize all kinds of workers, so they are suitable if you don't fit in other categories. These unions must be joined as a group. If at least a few of your coworkers support unionizing, click Join to contact the union. Otherwise, build support for unionization among your coworkers first and then return here (save the page).</p>
+			</div>
+			<div id="radio1nojob_info" style="display:none"><p>The following unions may offer apprenticeships, which allow you to get a union job and get trained--earning money while you learn. Typically, these give good wages and require little or no initial experience.</p>
+			<form id="form2">
+				<nav class="radioNav"><label><input type="radio" id="radioHowJoinApprenticeship" name="radio2" value="How to apply?">How to apply?</label><label><input type="radio" id="radioShowApprenticeshipList" name="radio2" value="Show union list">Show union list</label></nav>
+			</form>
+			<!--<button class="redSquareBtn" id="btnHowJoinApprenticeship">How to apply?</button>
+			<button class="redSquareBtn" id="btnShowApprenticeshipList">Show union list</button>-->
+				<ol id="text_HowApplyApprenticeship" style="display:none">
+					<li>Go to the website of one of the unions in the list.
+					<li>Use it to find a local (a union's subdivisions are called "locals") near your location.
+					<li>Contact the local and ask about the apprenticeship program.</li>	
+				</ol></p></div>
+			
+			<table id="box3_unionTable" class="unionTable">
+			
+			</table>
+		</div>
 	</div>
 </body>
 </html>

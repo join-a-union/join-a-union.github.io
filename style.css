@@ -1,13 +1,18 @@
 body{
-	font-family: Segoe UI, Noto Sans, Open Sans, Roboto, Arial;
 	overflow: hidden;
-	background: url("img/bg.avif");
+	text-align: justify;
+	height: 100vh;
 }
 
-.box1{
+body, select, .myButton1{
+	font-size: 16pt;
+	font-family: Segoe UI, Noto Sans, Open Sans, Roboto, Arial;
+}
+
+.box{
 	text-align: center;
 	border: solid black 1px;
-	max-width: 400px;
+	max-width: 500px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -16,6 +21,7 @@ body{
 	max-height: 100%;
 	overflow: auto;
 	background: white;
+	max-height: 90%;
 }
 
 .box1 ul{
@@ -24,60 +30,37 @@ body{
 	margin: 0 auto;
 }
 
-.box2{
-	text-align: center;
-	border: solid black 1px;
-	max-width: 400px;
-	display: none;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-right: -50%;
-	transform: translate(-50%, -50%);
-	max-height: 100%;
-	overflow: auto;
-	background: white;
+.box1{
 }
 
-@media screen and (max-width:400px) {
-  .box1, .box2{
-	max-width: 90%;
-  }
+.box2{
+	display: none;
 }
 
 .box3{
-	text-align: center;
-	border: solid black 1px;
 	max-width: 600px;
 	display: none;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-right: -50%;
-	transform: translate(-50%, -50%);
-	max-height: 90%;
-	overflow: auto;
-	background: white;
+}
+
+h1{
+	padding: 0;
+	margin: 0;
 }
 
 .box3 p{
-	max-width: 400px;
+	max-width: 500px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-@media screen and (max-width:600px) {
-  .box3{
-	max-width: 90%;
-  }
-}
-
 .biggertext{
-	font-size: 20px;
+	font-size: 20pt;
 }
 
 select{
-	max-width: 90%
+	max-width: 90%;
+	height: 50px;
+	filter: drop-shadow(2.5px 2.5px 2.5px black);
 }
 
 .unionTable{
@@ -90,33 +73,57 @@ select{
 	filter: drop-shadow(2.5px 2.5px 2.5px black);
 }
 
+.unionTable .unionName{
+	word-break: break-word;
+	font-size: 15pt;
+}
+
 .unionTable .unionAcronym{
 	font-weight: bold;
 }
 
-.joinUnionBtn{
+.myButton1{
 	background: white;
 	border: solid 2px red;
-	font-size: 16px;
-	min-width: 50px;
-	height: 50px;
+	min-width: 70px;
+	height: 70px;
 	transition: all 0.3s;
-	border-radius: 1.5em;
+	border-radius: 50%;
+	filter: drop-shadow(2.5px 2.5px 2.5px black);
+	word-break: normal !important;
 }
 
-.joinUnionBtn:hover{
+.myButton1 span{
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	line-height: 1;
+}
+
+.myButton1:hover{
 	cursor: pointer;
 	background: red;
 }
 
+
+.backButton{
+	border: solid 2px green;
+}
+
+.backButton:hover{
+	background: green;
+}
+
+
 .redSquareBtn{
-	  background: white;
-	  border: solid 2px red;
-	  font-size: 16px;
-	  width: 150px;
-	  height: 50px;
-	  transition: all 0.3s;
-	  border-radius: 1.5em;
+	background: white;
+	border: solid 2px red;
+	font-size: 16px;
+	width: 150px;
+	height: 50px;
+	transition: all 0.3s;
+	border-radius: 50%;
 }
 
 .redSquareBtn:hover{
@@ -124,35 +131,8 @@ select{
 	background: red;
 }
 
-.backButton{
-	background: white;
-	border: solid 2px green;
-	font-size: 16px;
-	min-width: 50px;
-	height: 50px;
-	transition: all 0.3s;
-	border-radius: 1.5em;
-}
-
-.backButton:hover{
-	cursor: pointer;
-	background: green;
-}
-
-/*.joinUnionBtn{
-	background: red;
-	font-size: 16px;
-	width: 50px;
-	height: 50px;
-}
-
-.joinUnionBtn:hover{
-	cursor: pointer;
-	border: solid 5px black;
-}*/
-
-.animate-opacity{animation:opac 1s}@keyframes opac{from{opacity:0} to{opacity:1}}
-.animate-opacityR{animation:opacR 1s}@keyframes opacR{from{opacity:1} to{opacity:0}}
+.animate-opacity{animation:opac 0.75s}@keyframes opac{from{opacity:0} to{opacity:1}}
+.animate-opacityR{animation:opacR 0.75s}@keyframes opacR{from{opacity:1} to{opacity:0}}
 
 .loading-button {
   position: relative;
@@ -172,4 +152,137 @@ select{
 
 @keyframes spin {
   to { transform: rotate(360deg); }
+}
+
+.radioNav {
+    border: 1px solid #666;
+    border-radius: 4px;
+    overflow: hidden;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	margin: auto;
+	margin-bottom: 10px;
+	box-shadow: 2.5px 2.5px 2.5px;
+	display: flex;
+	max-width: 90%;
+	/* width: fit-content; */
+	/*display: grid;
+	grid-template-columns: repeat(auto-fit, 1fr);
+	grid-auto-flow: column;
+	grid-auto-columns: 1fr;*/
+}
+
+.radioNav > *{
+	margin: 0;
+	padding: 0;
+}
+
+.radioNav input{
+	/*display: none;*/
+}
+
+.radioNav label{
+    font-family: sans-serif;
+    padding: 5px 10px;
+    border-right: 1px solid #ccc;
+    cursor: pointer;
+    transition: all 0.3s;
+	color: blue;
+	text-decoration: underline;
+	min-width: 60px;
+	height: 50px;
+	/*font-weight: bold;*/
+	display: flex;
+    align-items: center;
+	justify-content: center;
+	flex-grow: 1;
+}
+.radioNav label:last-of-type{ border-right: 0; }
+.radioNav label:hover{
+    background: #eee;
+}
+.radioNav label:has(input[type="radio"]:checked) {
+    background: #becbff;
+}
+
+.no-transition *{
+	transition: none !important;
+}
+
+.boxChild{
+	position: relative;
+	left: 100%;
+}
+
+.boxChild_active {
+	left: 0%;
+	transition: 0.5s;
+	display: revert !important;
+}
+
+.boxChild_hide {
+	position: absolute;
+	transform: translateX(-100%);
+	left: 0;
+	visibility: hidden;
+	transition: 0.5s;
+}
+
+/* @Media queries have to be at the end */
+
+@media screen and (max-width:400px) {
+  .box1, .box2{
+	max-width: 90%;
+  }
+}
+
+@media screen and (min-width:601px) {
+	body{
+		background: url("img/bg.avif");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+	}
+}
+
+@media screen and (max-width:600px) {
+	body{
+		background: url("img/bg-600px.avif");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+	}
+	
+	.box3{
+		max-width: 90%;
+	}
+	
+	.myButton1{
+		min-width: 70px;
+		height: 70px;
+	}
+	
+	 select, .radioNav label{
+		 height: 60px;
+	 }
+	
+	.unionAcronym{
+		/*display: none;*/
+	}
+}
+
+.myButton1 {
+  --clickable-space-around-button: -2px;
+  position: relative;
+}
+
+.myButton1::after {
+  content: "";
+  left: var(--clickable-space-around-button);
+  right: var(--clickable-space-around-button);
+  bottom: var(--clickable-space-around-button);
+  top: var(--clickable-space-around-button);
+  position: absolute;
 }
