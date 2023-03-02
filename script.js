@@ -3,7 +3,9 @@ var countrySelect;
 var occupationSelect;
 var data2Countries = ["USA", "Canada"];
 var firstLoad = true;
-var restoreOverflowTimeout = null;
+var restoreScrollbarsTimeout = null;
+var activeBox = null;
+var touchStartY = 0;
 
 function loadDataForSelect(selectElement, dataset, type, list){
 	dataset.forEach(x => {
@@ -28,14 +30,16 @@ function resetPage(){
     
     occupationSelect.value = "";
     $("form1").reset();
+    $("form2").reset();
 }
 
 function onPageShow(){
-    if(firstLoad){
-        firstLoad = false;
-    }else{
-        resetPage();
-    }
+    resetPage();
+}
+
+function showBox(box){
+    activeBox = box;
+    box.style.display = "revert";
 }
 
 function geoAutoSelect(){
@@ -62,7 +66,7 @@ function geoAutoSelect(){
             countrySelect.value = country;
             changedCountry();
         }else{
-            $("box1").style.display = "revert";
+            showBox($("box1"));
         }
     }
 }
@@ -81,8 +85,13 @@ function onload(){
 	/*$("btnHowJoinApprenticeship").addEventListener("click", btnHowJoinApprenticeship_Click);
 	$("btnShowApprenticeshipList").addEventListener("click", btnShowApprenticeshipList_Click);*/
     addEventListener('hashchange', onHashChange);
-    resetPage();
     addEventListener('pageshow', onPageShow);
+    
+    addEventListener('wheel', scrollHandler);
+    addEventListener('keydown', scrollHandler);
+    addEventListener('touchstart', touchStartHandler);
+    addEventListener('touchmove', scrollHandler);
+    
     if(location.hash != ""){
         var country = location.hash.split("#")[1];
         if(checkHaveDataForCountry(country)){
@@ -106,7 +115,7 @@ function changedCountry(){
     if(data2Countries.includes(countrySelect.value)){
         $("box1").style.display = "none";
         $("box2").style.display = "none";
-        $("box3").style.display = "revert";
+        showBox($("box3"));
         if(!firstLoad) $("box3").classList.add("animate-opacity");
         $("box3").scrollIntoView({behavior: "smooth"})
         $("box3_countryLabel").appendChild(countrySelect);
@@ -116,14 +125,14 @@ function changedCountry(){
             $("box1").style.display = "none";
            //  $("box2").classList.remove("animate-opacity");
             $("box3").style.display = "none";
-            $("box2").style.display = "revert";
+            showBox($("box2"));
             // $("box1_intro").classList.add("animate-opacityR");
             genUnionTable(union_data, $("unionTable"), false);
             if(!firstLoad) $("box2").classList.add("animate-opacity");
             $("box2").scrollIntoView({behavior: "smooth"});
             $("box2_countryLabel").appendChild(countrySelect);
         }else{
-            $("box1").style.display = "revert";
+            showBox($("box1"));
             // $("countryDataNotFoundBox").style.display = "revert"; // Commented out bc maybe country detection is wrong
         }
     }
@@ -284,7 +293,7 @@ function changedOccupation(){
         showChildBox($("box3_2"));
         // $("box3_2_front").appendChild(countrySelect);
         appendChildConditional($("box3_2_front"), $("radio1n_info"));
-        //$("box3").style.overflow = "auto";
+        // restoreScrollbars($("box3"));
         //$("box3_1").style.display = "none";
         $("box3_2").style.display = "revert";
         var unionTable = $("unionTable");
@@ -368,12 +377,14 @@ function form2_change(){
         if($("text_HowApplyApprenticeship").style.display == "none"){
             $("text_HowApplyApprenticeship").style.display = "revert";
             $("text_HowApplyApprenticeship").classList.add("animate-opacity");
+            $("text_HowApplyApprenticeship").scrollIntoView({behavior: "smooth"})
         }
     }else if($("radioShowApprenticeshipList").checked){
         if($("box3_unionTable").style.display == "none"){
             $("box3_unionTable").style.display = "revert";
             $("box3_unionTable").classList.add("animate-opacity");
-            $("box3").style.overflow = "auto";
+            restoreScrollbars($("box3"));
+            $("box3_unionTable").scrollIntoView({behavior: "smooth"})
         }
     }
 }
@@ -392,14 +403,18 @@ function showChildBox(box, skipTransition){
     }
 }
 
+function restoreScrollbars(box){
+    box.classList.remove("hideScrollbars");
+}
+
 function hideChildBox(box){
     if(box.classList.contains("boxChild_active") || box.style.display != "none"){
-        $("box3").style.overflow = "clip";
+        $("box3").classList.add("hideScrollbars");
         box.classList.remove("boxChild_active");
         box.classList.add("boxChild_hide");
-        if(restoreOverflowTimeout != null) window.clearTimeout(restoreOverflowTimeout);
-            restoreOverflowTimeout = setTimeout(() => {
-                $("box3").style.overflow = "auto";
+        if(restoreScrollbarsTimeout != null) window.clearTimeout(restoreScrollbarsTimeout);
+            restoreScrollbarsTimeout = setTimeout(() => {
+                restoreScrollbars($("box3"));
             }, 1000);
        setTimeout(() => {
         box.style.display = "none";
@@ -409,7 +424,7 @@ function hideChildBox(box){
 
 function box2_backButton_Click(){
     $("box2").style.display = "none";
-    $("box1").style.display = "revert";
+    showBox($("box1"));
     $("box1").classList.add("animate-opacity");
     countrySelect.value = "";
     location.hash = "";
@@ -426,7 +441,7 @@ function box3_backButton_Click(){
         countrySelect.value = "";
         location.hash = "";
         $("box3").style.display = "none";
-        $("box1").style.display = "revert";
+        showBox($("box1"));
         $("box1").classList.add("animate-opacity");
         $("box1_countrySelectHolder").appendChild(countrySelect);
     }
@@ -466,7 +481,7 @@ function btnShowApprenticeshipList_Click(){
     if($("box3_unionTable").style.display == "none"){
         $("box3_unionTable").style.display = "revert";
         $("box3_unionTable").classList.add("animate-opacity");
-        $("box3").style.overflow = "auto";
+        restoreScrollbars($("box3"));
     }else{
         $("box3_unionTable").style.display = "none";
     }
@@ -476,6 +491,54 @@ function onHashChange(){
     if(location.hash == ""){
         if($("box2").style.display != "none") box2_backButton_Click();
         if($("box3").style.display != "none") box3_backButton_Click();
+    }
+}
+
+function touchStartHandler(event) {
+    touchStartY = event.touches[0].clientY;
+}
+
+// Event handler function for scrolling
+function scrollHandler(event) {
+    if (activeBox != null && touchStartY != null) {
+        target = false;
+        if (event.target === document || event.target === window || event.target === document.body || event.target === document.documentElement) target = true;
+        // console.log(event.target);
+
+        // Prevent the default behavior of the event (e.g. scrolling the page)
+        // event.preventDefault();
+
+        // Determine the amount to scroll based on the event type
+        var deltaY = 0;
+        switch (event.type) {
+            case 'wheel':
+                if (target) {
+                    deltaY = event.deltaY;
+                }
+                break;
+            case 'keydown':
+                /*// console.log(document.activeElement);
+                if(document.activeElement != activeBox){
+                  if (event.keyCode === 38) { // Up arrow
+                    deltaY = -10;
+                  } else if (event.keyCode === 40) { // Down arrow
+                    deltaY = 10;
+                  }
+                }*/
+                break;
+            case 'touchmove':
+                if (target) {
+                    if (event.touches.length == 1) {
+                        deltaY = (touchStartY - event.touches[0].clientY) / 8;
+                    }
+                }
+                break;
+        }
+
+        // console.log(deltaY != 0);
+
+        // Scroll the element by the determined amount
+        activeBox.scrollTop += deltaY;
     }
 }
 

@@ -1,7 +1,6 @@
 body{
 	overflow: hidden;
 	text-align: justify;
-	height: 100vh;
 }
 
 body, select, .myButton1{
@@ -18,7 +17,6 @@ body, select, .myButton1{
 	left: 50%;
 	margin-right: -50%;
 	transform: translate(-50%, -50%);
-	max-height: 100%;
 	overflow: auto;
 	background: white;
 	max-height: 90%;
@@ -228,6 +226,33 @@ select{
 	transition: 0.5s;
 }
 
+.myButton1 {
+  --clickable-space-around-button: -2px;
+  position: relative;
+}
+
+.myButton1::after {
+  content: "";
+  left: var(--clickable-space-around-button);
+  right: var(--clickable-space-around-button);
+  bottom: var(--clickable-space-around-button);
+  top: var(--clickable-space-around-button);
+  position: absolute;
+}
+
+body{
+	display: revert !important;
+}
+
+.hideScrollbars{
+	overflow-x: clip;
+	/*scrollbar-width: none;*/
+}
+
+.hideScrollbars::-webkit-scrollbar{
+	/*display: none;*/
+}
+
 /* @Media queries have to be at the end */
 
 @media screen and (max-width:400px) {
@@ -271,18 +296,4 @@ select{
 	.unionAcronym{
 		/*display: none;*/
 	}
-}
-
-.myButton1 {
-  --clickable-space-around-button: -2px;
-  position: relative;
-}
-
-.myButton1::after {
-  content: "";
-  left: var(--clickable-space-around-button);
-  right: var(--clickable-space-around-button);
-  bottom: var(--clickable-space-around-button);
-  top: var(--clickable-space-around-button);
-  position: absolute;
 }
