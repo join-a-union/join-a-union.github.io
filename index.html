@@ -7,6 +7,10 @@
 	<style media="print" onload="this.media='all'">body{
 	overflow: hidden;
 	text-align: justify;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
 }
 
 body, select, .myButton1{
@@ -267,25 +271,7 @@ body{
   }
 }
 
-@media screen and (min-width:601px) {
-	body{
-		background: url("img/bg.avif");
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: center;
-		background-attachment: fixed;
-	}
-}
-
 @media screen and (max-width:600px) {
-	body{
-		background: url("img/bg-600px.avif");
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: center;
-		background-attachment: fixed;
-	}
-	
 	.box3{
 		max-width: 90%;
 	}
@@ -1355,6 +1341,7 @@ function resetPage(){
 
 function onPageShow(){
     resetPage();
+    firstLoad = false;
 }
 
 function showBox(box){
@@ -1391,6 +1378,15 @@ function geoAutoSelect(){
     }
 }
 
+function loadBG(){
+    const windowWidth = window.innerWidth;
+    if (windowWidth >= 600) {
+        document.body.style.backgroundImage = "url('img/bg.avif')";
+    } else {
+        document.body.style.backgroundImage = "url('img/bg-600px.avif')";
+    }
+}
+
 function onload(){
 	countrySelect = $("countrySelect");
     // loadDataForSelect(countrySelect, union_data, "Country", [...data2Countries]);
@@ -1411,6 +1407,8 @@ function onload(){
     addEventListener('keydown', scrollHandler);
     addEventListener('touchstart', touchStartHandler);
     addEventListener('touchmove', scrollHandler);
+    
+    loadBG();
     
     if(location.hash != ""){
         var country = location.hash.split("#")[1];

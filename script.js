@@ -35,6 +35,7 @@ function resetPage(){
 
 function onPageShow(){
     resetPage();
+    firstLoad = false;
 }
 
 function showBox(box){
@@ -71,6 +72,15 @@ function geoAutoSelect(){
     }
 }
 
+function loadBG(){
+    const windowWidth = window.innerWidth;
+    if (windowWidth >= 600) {
+        document.body.style.backgroundImage = "url('img/bg.avif')";
+    } else {
+        document.body.style.backgroundImage = "url('img/bg-600px.avif')";
+    }
+}
+
 function onload(){
 	countrySelect = $("countrySelect");
     // loadDataForSelect(countrySelect, union_data, "Country", [...data2Countries]);
@@ -91,6 +101,8 @@ function onload(){
     addEventListener('keydown', scrollHandler);
     addEventListener('touchstart', touchStartHandler);
     addEventListener('touchmove', scrollHandler);
+    
+    loadBG();
     
     if(location.hash != ""){
         var country = location.hash.split("#")[1];

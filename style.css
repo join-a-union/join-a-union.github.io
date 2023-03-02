@@ -1,6 +1,10 @@
 body{
 	overflow: hidden;
 	text-align: justify;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
 }
 
 body, select, .myButton1{
@@ -261,25 +265,7 @@ body{
   }
 }
 
-@media screen and (min-width:601px) {
-	body{
-		background: url("img/bg.avif");
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: center;
-		background-attachment: fixed;
-	}
-}
-
 @media screen and (max-width:600px) {
-	body{
-		background: url("img/bg-600px.avif");
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: center;
-		background-attachment: fixed;
-	}
-	
 	.box3{
 		max-width: 90%;
 	}
