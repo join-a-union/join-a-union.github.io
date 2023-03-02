@@ -244,6 +244,10 @@ select{
   position: absolute;
 }
 
+img:not([src]){
+	visibility: hidden;
+}
+
 body{
 	display: revert !important;
 }

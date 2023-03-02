@@ -72,13 +72,19 @@ function geoAutoSelect(){
     }
 }
 
-function loadBG(){
+function loadImages(){
+    const myImages = document.querySelectorAll('img[data-src]');
+
+    myImages.forEach(img => {img.setAttribute('src', img.getAttribute('data-src'))});
+  
     const windowWidth = window.innerWidth;
     if (windowWidth >= 600) {
         document.body.style.backgroundImage = "url('img/bg.avif')";
     } else {
         document.body.style.backgroundImage = "url('img/bg-600px.avif')";
     }
+    
+    const images = document.querySelectorAll('img[data-src]');
 }
 
 function onload(){
@@ -115,7 +121,7 @@ function onload(){
 
 function onAllLoad(){
     document.body.classList.remove("no-transition");
-    loadBG();
+    loadImages();
 }
 
 function changedCountry(){
