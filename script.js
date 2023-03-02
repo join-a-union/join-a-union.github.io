@@ -117,7 +117,7 @@ function changedCountry(){
         $("box2").style.display = "none";
         showBox($("box3"));
         if(!firstLoad) $("box3").classList.add("animate-opacity");
-        $("box3").scrollIntoView({behavior: "smooth"})
+        $("box3").scrollIntoView({behavior: "smooth"});
         $("box3_countryLabel").appendChild(countrySelect);
         resetBox3();
     }else if(countrySelect.value != ""){
@@ -334,7 +334,7 @@ function form1_change(){
         $("box3_unionTable").style.display = "none";
         $("radio1y_info").style.display = "revert";
         $("radio1y_info").classList.add("animate-opacity");
-        $("radio1y_info").scrollIntoView({behavior: "smooth"})
+        $("radio1y_info").scrollIntoView({behavior: "smooth"});
     }else{
         $("radio1y_info").style.display = "none";
     }
@@ -342,7 +342,7 @@ function form1_change(){
     if($("radio1n").checked){
         $("radio1n_info").style.display = "revert";
         $("radio1n_info").classList.add("animate-opacity");
-        $("radio1n_info").scrollIntoView({behavior: "smooth"})
+        $("radio1n_info").scrollIntoView({behavior: "smooth"});
         occupationSelect.value = "";
         occupationSelect.innerHTML = "<option></option>";
         loadDataForSelect(occupationSelect, union_data2, "Occupation", []);
@@ -362,7 +362,7 @@ function form1_change(){
         /*$("box3_unionTable").style.display = "revert";
         $("box3_unionTable").classList.add("animate-opacity");*/
         genUnionTable(union_data2, $("box3_unionTable"), false, true);
-        //$("radio1nojob_info").scrollIntoView({behavior: "smooth"})
+        //$("radio1nojob_info").scrollIntoView({behavior: "smooth"});
     }else{
         $("radio1nojob_info").style.display = "none";
         appendChildConditional($("box3_formContainer"), $("form1"));
@@ -377,14 +377,14 @@ function form2_change(){
         if($("text_HowApplyApprenticeship").style.display == "none"){
             $("text_HowApplyApprenticeship").style.display = "revert";
             $("text_HowApplyApprenticeship").classList.add("animate-opacity");
-            $("text_HowApplyApprenticeship").scrollIntoView({behavior: "smooth"})
+            $("text_HowApplyApprenticeship").scrollIntoView({behavior: "smooth"});
         }
     }else if($("radioShowApprenticeshipList").checked){
         if($("box3_unionTable").style.display == "none"){
             $("box3_unionTable").style.display = "revert";
             $("box3_unionTable").classList.add("animate-opacity");
             restoreScrollbars($("box3"));
-            $("box3_unionTable").scrollIntoView({behavior: "smooth"})
+            $("box3_unionTable").scrollIntoView({behavior: "smooth"});
         }
     }
 }
