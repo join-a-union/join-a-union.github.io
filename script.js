@@ -102,8 +102,6 @@ function onload(){
     addEventListener('touchstart', touchStartHandler);
     addEventListener('touchmove', scrollHandler);
     
-    loadBG();
-    
     if(location.hash != ""){
         var country = location.hash.split("#")[1];
         if(checkHaveDataForCountry(country)){
@@ -117,6 +115,7 @@ function onload(){
 
 function onAllLoad(){
     document.body.classList.remove("no-transition");
+    loadBG();
 }
 
 function changedCountry(){
