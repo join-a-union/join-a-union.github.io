@@ -83,8 +83,6 @@ function loadImages(){
     } else {
         document.body.style.backgroundImage = "url('img/bg-600px.avif')";
     }
-    
-    const images = document.querySelectorAll('img[data-src]');
 }
 
 function onload(){
