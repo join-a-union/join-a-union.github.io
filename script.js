@@ -75,7 +75,7 @@ function geoAutoSelect(){
 function loadImages(){
     const myImages = document.querySelectorAll('img[data-src]');
 
-    myImages.forEach(img => {img.setAttribute('src', img.getAttribute('data-src'))});
+    myImages.forEach(img => {img.setAttribute('src', img.getAttribute('data-src'));});
   
     const windowWidth = window.innerWidth;
     if (windowWidth >= 600) {
